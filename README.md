@@ -12,7 +12,7 @@ Cada pessoa da agenda deve ter os seguintes dados:
 • Observações: uma linha (string) para alguma observação especial.
 
 Leandro{
-(a) Definir as estruturas acima.
+(a) Definir as estruturas acima.\n
 (b) Declarar a variável agenda (vetor) com capacidade de agendar até 100 nomes.
 (c) Criar uma função de busca por primeiro nome: Imprime os dados da pessoa com esse nome (se tiver mais de uma pessoa, imprime para todas).
 (d) Criar uma função de busca por mês de aniversário: Imprime os dados de todas as pessoas que fazem aniversário nesse mês.
