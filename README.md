@@ -11,24 +11,27 @@ Cada pessoa da agenda deve ter os seguintes dados:
 • Data de aniversário (contendo campo para dia, mês, ano).
 • Observações: uma linha (string) para alguma observação especial.
 
-Leandro{
-(a) Definir as estruturas acima.\n
+===============================
+Leandro
+(a) Definir as estruturas acima.
 (b) Declarar a variável agenda (vetor) com capacidade de agendar até 100 nomes.
 (c) Criar uma função de busca por primeiro nome: Imprime os dados da pessoa com esse nome (se tiver mais de uma pessoa, imprime para todas).
 (d) Criar uma função de busca por mês de aniversário: Imprime os dados de todas as pessoas que fazem aniversário nesse mês.
 (e) Criar uma função de busca por número de telefone: Imprime os dado da pessoa com esse respectivo número.
 (i) Criar funções de validação para, no mínimo (dia, mês e ano; telefone; email; cep; estado).
-(j) O programa deve ter um menu principal oferecendo as opções acima.
-}
 
-Nicole{
+================================
+
+===============================
+Nicole
 (f) Criar uma função para listar pessoas - por ordem alfabética de nome.
 (g) Criar uma função para excluir pessoas - retira todos os dados dessa pessoa e readeque o vetor de pessoas.
 (h) Criar uma função para imprimir a agenda com as opções:
       • Imprime nome, telefone e e-mail (ordem alfabética de nome).
       • Imprime nome, telefone e e-mail (separado por localidade).
       • Imprime todos os dados (ordem alfabética de nome).
-}
+(j) O programa deve ter um menu principal oferecendo as opções acima.
+===============================
 
 Validações
 
