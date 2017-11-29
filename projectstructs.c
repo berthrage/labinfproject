@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#define TAMAGENDA (100)
 
 struct Endereco{
 	char rua[151];
@@ -29,9 +30,19 @@ struct Pessoa{
 	struct Endereco endereco;
 	struct Telefone telefone;
 	struct DataNiver dataNiver;
-	char Obs[301];
+	char obs[301];
 };
 
+struct Pessoa pessoa[TAMAGENDA];
+
+
+
 int main(){
+	int auxnulo;
 	
+	//Classificar todo o vetor das pessoas da agenda como vazio
+	for (auxnulo = 2; auxnulo < TAMAGENDA; auxnulo++){
+		strcpy(pessoa[auxnulo].telefone.numero, "NULL");
+	}
+
 }
