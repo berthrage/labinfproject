@@ -1,18 +1,33 @@
+// PROJETO AGENDA TELEFONICA - labinf 2017-2
+// Membros do grupo: Leandro Bertoldo e Nicole Beatriz
 #include <stdio.h>
 #include <string.h>
-#include "funcoes1.h"
+#include <locale.h>
 #include "main.h"
+#include "menu.h"
+#include "cadastrarAgenda.h"
+#include "listarAgenda.h"
+#include "ordemAlfTotal.h"
+#include "ordemAlf.h"
+#include "ordemLocal.h"
+
 
 int main(){
-	int auxnulo;
+    int auxnulo;
+    // Permite usar acentuaçao
+    setlocale(LC_ALL, "Portuguese");
 
-	//Classificar todo o vetor das pessoas da agenda como vazio
-	for (auxnulo = 2; auxnulo < TAMAGENDA; auxnulo++){
-		strcpy(pessoa[auxnulo].telefone.numero, "NULL");
-	}
+    // Mudar cor da fonte
+    system("color B");
 
-	cadastrarAgenda ();
+    //Classificar todo o vetor das pessoas da agenda como vazio
+    for (auxnulo = 0; auxnulo < TAMAGENDA; auxnulo++){
+        strcpy(pessoa[auxnulo].telefone.numero, "NULL");
+    }
 
-	getch();
-	return 0;
+  
+    menu();
+
+    getch();
+    return 0;
 }

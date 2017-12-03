@@ -9,7 +9,7 @@ struct Endereco{
 	char bairro[52];
 	char cep[12];
 	char cidade[52];
-	char estado[4];
+	char estado[5];
 	char pais[52];
 };
 
@@ -35,4 +35,5 @@ struct Pessoa{
 
 struct Pessoa pessoa[100];
 
-#endif
+
+#endif //MAIN_H
