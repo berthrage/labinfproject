@@ -17,6 +17,7 @@ void menu(){
 
     do{
         scanf("%d", &op);
+        fflush(stdin);
 
         switch(op){
             case 1:
@@ -27,7 +28,7 @@ void menu(){
 
             case 2:
                 system("cls");
-                excluirContato();
+                excluirAgenda();
                 valido = 1;
                 break;
 

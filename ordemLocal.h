@@ -1,4 +1,6 @@
+#include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #ifndef ORDEMLOCAL_H_INCLUDED
 #define ORDEMLOCAL_H_INCLUDED
 #include "main.h"
@@ -7,6 +9,7 @@ void ordemLocalidade(){
     int i,
         j,
         op,
+        mostrar,
         valido;
 
     printf("*****************************************************************\n");
@@ -14,300 +17,472 @@ void ordemLocalidade(){
     printf("*\t\t\t\t\t\t\t\t*");
     printf("\n*****************************************************************\n");
 
-    printf(" * Acre  \n\n");
+    // Separando por estado
     for(i = 0; i < TAMAGENDA; i++){
-        char aux[4] = "AC";
+        char aux[4] = "ac";
+
+        mostrar = 0;
 
         if(stricmp(pessoa[i].endereco.estado, aux) == 0){
-            printf("\n\n\n Nome: %s", pessoa[i].nome);
+            if(mostrar == 0){
+                printf("\n\n\n * Acre  \n");
+            }
+
+            printf("\n Nome: %s", pessoa[i].nome);
             printf("\n Telefone: %s %s", pessoa[i].telefone.ddd , pessoa[i].telefone.numero);
             printf("\n E-mail: %s", pessoa[i].email);
+
+            mostrar = 1;
         }
     }
 
-    printf(" * Alagoas  \n\n");
     for(i = 0; i < TAMAGENDA; i++){
-        char aux[4] = "AL";
+        char aux[4] = "al";
+
+        mostrar = 0;
 
         if(stricmp(pessoa[i].endereco.estado, aux) == 0){
-            printf("\n\n\n Nome: %s", pessoa[i].nome);
+                if(mostrar == 0){
+                    printf("\n\n\n * Alagoas  \n");
+            }
+
+            printf("\n Nome: %s", pessoa[i].nome);
             printf("\n Telefone: %s %s", pessoa[i].telefone.ddd , pessoa[i].telefone.numero);
             printf("\n E-mail: %s", pessoa[i].email);
+
+            mostrar = 1;
         }
     }
 
-    printf(" * Amapá  \n\n");
     for(i = 0; i < TAMAGENDA; i++){
-        char aux[4] = "AP";
+        char aux[4] = "ap";
+
+        mostrar = 0;
 
         if(stricmp(pessoa[i].endereco.estado, aux) == 0){
-            printf("\n\n\n Nome: %s", pessoa[i].nome);
+                if(mostrar == 0){
+                    printf("\n\n\n * Amapá  \n");
+            }
+
+            printf("\n Nome: %s", pessoa[i].nome);
             printf("\n Telefone: %s %s", pessoa[i].telefone.ddd , pessoa[i].telefone.numero);
             printf("\n E-mail: %s", pessoa[i].email);
+
+            mostrar = 1;
         }
     }
 
-    printf(" * Amazonas  \n\n");
     for(i = 0; i < TAMAGENDA; i++){
-        char aux[4] = "AM";
+        char aux[4] = "am";
+
+        mostrar = 0;
 
         if(stricmp(pessoa[i].endereco.estado, aux) == 0){
-            printf("\n\n\n Nome: %s", pessoa[i].nome);
+                if(mostrar == 0){
+                    printf("\n\n\n * Amazonas  \n");
+            }
+
+            printf("\n Nome: %s", pessoa[i].nome);
             printf("\n Telefone: %s %s", pessoa[i].telefone.ddd , pessoa[i].telefone.numero);
             printf("\n E-mail: %s", pessoa[i].email);
+
+            mostrar = 1;
         }
     }
 
-    printf(" * Bahia  \n\n");
     for(i = 0; i < TAMAGENDA; i++){
-        char aux[4] = "BA";
+        char aux[4] = "ba";
+
+        mostrar = 0;
 
         if(stricmp(pessoa[i].endereco.estado, aux) == 0){
-            printf("\n\n\n Nome: %s", pessoa[i].nome);
+                if(mostrar == 0){
+                    printf("\n\n\n * Bahia  \n");
+            }
+
+            printf("\n Nome: %s", pessoa[i].nome);
             printf("\n Telefone: %s %s", pessoa[i].telefone.ddd , pessoa[i].telefone.numero);
             printf("\n E-mail: %s", pessoa[i].email);
+
+            mostrar = 1;
         }
     }
 
-    printf(" * Ceará  \n\n");
     for(i = 0; i < TAMAGENDA; i++){
-        char aux[4] = "CE";
+        char aux[4] = "ce";
+
+        mostrar = 0;
 
         if(stricmp(pessoa[i].endereco.estado, aux) == 0){
-            printf("\n\n\n Nome: %s", pessoa[i].nome);
+                if(mostrar == 0){
+                    printf("\n\n\n * Ceará  \n");
+            }
+
+            printf("\n Nome: %s", pessoa[i].nome);
             printf("\n Telefone: %s %s", pessoa[i].telefone.ddd , pessoa[i].telefone.numero);
             printf("\n E-mail: %s", pessoa[i].email);
+
+            mostrar = 1;
         }
     }
 
-    printf(" * Distrito Federal \n\n");
     for(i = 0; i < TAMAGENDA; i++){
-        char aux[4] = "DF";
+        char aux[4] = "df";
+
+        mostrar = 0;
 
         if(stricmp(pessoa[i].endereco.estado, aux) == 0){
-            printf("\n\n\n Nome: %s", pessoa[i].nome);
+                if(mostrar == 0){
+                    printf("\n\n\n * Distrito Federal \n");
+            }
+
+            printf("\n Nome: %s", pessoa[i].nome);
             printf("\n Telefone: %s %s", pessoa[i].telefone.ddd , pessoa[i].telefone.numero);
             printf("\n E-mail: %s", pessoa[i].email);
+
+            mostrar = 1;
         }
     }
 
-    printf(" * Espírito Santo \n\n");
     for(i = 0; i < TAMAGENDA; i++){
-        char aux[4] = "ES";
+        char aux[4] = "es";
+
+        mostrar = 0;
 
         if(stricmp(pessoa[i].endereco.estado, aux) == 0){
-            printf("\n\n\n Nome: %s", pessoa[i].nome);
+                if(mostrar == 0){
+                    printf("\n\n\n * Espírito Santo \n");
+            }
+
+            printf("\n Nome: %s", pessoa[i].nome);
             printf("\n Telefone: %s %s", pessoa[i].telefone.ddd , pessoa[i].telefone.numero);
             printf("\n E-mail: %s", pessoa[i].email);
+
+            mostrar = 1;
         }
     }
 
-    printf(" * Goiás \n\n");
     for(i = 0; i < TAMAGENDA; i++){
-        char aux[4] = "GO";
+        char aux[4] = "go";
+
+        mostrar = 0;
 
         if(stricmp(pessoa[i].endereco.estado, aux) == 0){
-            printf("\n\n\n Nome: %s", pessoa[i].nome);
+                if(mostrar == 0){
+                    printf("\n\n\n * Goiás \n");
+            }
+
+            printf("\n Nome: %s", pessoa[i].nome);
             printf("\n Telefone: %s %s", pessoa[i].telefone.ddd , pessoa[i].telefone.numero);
             printf("\n E-mail: %s", pessoa[i].email);
+
+            mostrar = 1;
         }
     }
 
-    printf(" * Maranhão \n\n");
     for(i = 0; i < TAMAGENDA; i++){
-        char aux[4] = "MA";
+        char aux[4] = "ma";
+
+        mostrar = 0;
 
         if(stricmp(pessoa[i].endereco.estado, aux) == 0){
-            printf("\n\n\n Nome: %s", pessoa[i].nome);
+                if(mostrar == 0){
+                    printf("\n\n\n * Maranhão \n");
+            }
+            printf("\n Nome: %s", pessoa[i].nome);
             printf("\n Telefone: %s %s", pessoa[i].telefone.ddd , pessoa[i].telefone.numero);
             printf("\n E-mail: %s", pessoa[i].email);
+
+            mostrar = 1;
         }
     }
 
-    printf(" * Mato Grosso \n\n");
     for(i = 0; i < TAMAGENDA; i++){
-        char aux[4] = "MT";
+        char aux[4] = "mt";
+
+        mostrar = 0;
 
         if(stricmp(pessoa[i].endereco.estado, aux) == 0){
-            printf("\n\n\n Nome: %s", pessoa[i].nome);
+                if(mostrar == 0){
+                    printf("\n\n\n * Mato Grosso \n");
+            }
+            printf("\n Nome: %s", pessoa[i].nome);
             printf("\n Telefone: %s %s", pessoa[i].telefone.ddd , pessoa[i].telefone.numero);
             printf("\n E-mail: %s", pessoa[i].email);
+
+            mostrar = 1;
         }
     }
 
-    printf(" * Mato Grosso do Sul \n\n");
     for(i = 0; i < TAMAGENDA; i++){
-        char aux[4] = "MS";
+        char aux[4] = "ms";
+
+        mostrar = 0;
 
         if(stricmp(pessoa[i].endereco.estado, aux) == 0){
-            printf("\n\n\n Nome: %s", pessoa[i].nome);
+                if(mostrar == 0){
+                    printf("\n\n\n * Mato Grosso do Sul \n");
+            }
+            printf("\n Nome: %s", pessoa[i].nome);
             printf("\n Telefone: %s %s", pessoa[i].telefone.ddd , pessoa[i].telefone.numero);
             printf("\n E-mail: %s", pessoa[i].email);
+
+            mostrar = 1;
         }
     }
 
-    printf(" * Minas Gerais \n\n");
     for(i = 0; i < TAMAGENDA; i++){
-        char aux[4] = "MG";
+        char aux[4] = "mg";
+
+        mostrar = 0;
 
         if(stricmp(pessoa[i].endereco.estado, aux) == 0){
-            printf("\n\n\n Nome: %s", pessoa[i].nome);
+                if(mostrar == 0){
+                    printf("\n\n\n * Minas Gerais \n");
+            }
+            printf("\n Nome: %s", pessoa[i].nome);
             printf("\n Telefone: %s %s", pessoa[i].telefone.ddd , pessoa[i].telefone.numero);
             printf("\n E-mail: %s", pessoa[i].email);
+
+            mostrar = 1;
         }
     }
 
-    printf(" * Pará \n\n");
     for(i = 0; i < TAMAGENDA; i++){
-        char aux[4] = "PA";
+        char aux[4] = "pa";
+
+        mostrar = 0;
 
         if(stricmp(pessoa[i].endereco.estado, aux) == 0){
-            printf("\n\n\n Nome: %s", pessoa[i].nome);
+                if(mostrar == 0){
+                    printf("\n\n\n * Pará \n");
+            }
+            printf("\n Nome: %s", pessoa[i].nome);
             printf("\n Telefone: %s %s", pessoa[i].telefone.ddd , pessoa[i].telefone.numero);
             printf("\n E-mail: %s", pessoa[i].email);
+
+            mostrar = 1;
         }
     }
 
-    printf(" * Paraíba \n\n");
     for(i = 0; i < TAMAGENDA; i++){
-        char aux[4] = "PB";
+        char aux[4] = "pb";
+
+        mostrar = 0;
 
         if(stricmp(pessoa[i].endereco.estado, aux) == 0){
-            printf("\n\n\n Nome: %s", pessoa[i].nome);
+                if(mostrar == 0){
+                    printf("\n\n\n * Paraíba \n");
+            }
+            printf("\n Nome: %s", pessoa[i].nome);
             printf("\n Telefone: %s %s", pessoa[i].telefone.ddd , pessoa[i].telefone.numero);
             printf("\n E-mail: %s", pessoa[i].email);
+
+            mostrar = 1;
         }
     }
 
-    printf(" * Paraná \n\n");
     for(i = 0; i < TAMAGENDA; i++){
-        char aux[4] = "PR";
+        char aux[4] = "pr";
+
+        mostrar = 0;
 
         if(stricmp(pessoa[i].endereco.estado, aux) == 0){
-            printf("\n\n\n Nome: %s", pessoa[i].nome);
+                if(mostrar == 0){
+                    printf("\n\n\n * Paraná \n");
+            }
+            printf("\n Nome: %s", pessoa[i].nome);
             printf("\n Telefone: %s %s", pessoa[i].telefone.ddd , pessoa[i].telefone.numero);
             printf("\n E-mail: %s", pessoa[i].email);
+
+            mostrar = 1;
         }
     }
 
-    printf(" * Pernambuco \n\n");
     for(i = 0; i < TAMAGENDA; i++){
-        char aux[4] = "PE";
+        char aux[4] = "pe";
+
+        mostrar = 0;
 
         if(stricmp(pessoa[i].endereco.estado, aux) == 0){
-            printf("\n\n\n Nome: %s", pessoa[i].nome);
+                if(mostrar == 0){
+                    printf("\n\n\n * Pernambuco \n");
+            }
+            printf("\n Nome: %s", pessoa[i].nome);
             printf("\n Telefone: %s %s", pessoa[i].telefone.ddd , pessoa[i].telefone.numero);
             printf("\n E-mail: %s", pessoa[i].email);
+
+            mostrar = 1;
         }
     }
 
-    printf(" * Piauí \n\n");
     for(i = 0; i < TAMAGENDA; i++){
-        char aux[4] = "PI";
+        char aux[4] = "pi";
+
+        mostrar = 0;
 
         if(stricmp(pessoa[i].endereco.estado, aux) == 0){
-            printf("\n\n\n Nome: %s", pessoa[i].nome);
+                if(mostrar == 0){
+                    printf("\n\n\n * Piauí \n");
+            }
+            printf("\n Nome: %s", pessoa[i].nome);
             printf("\n Telefone: %s %s", pessoa[i].telefone.ddd , pessoa[i].telefone.numero);
             printf("\n E-mail: %s", pessoa[i].email);
+
+            mostrar = 1;
         }
     }
 
-    printf(" * Rio de Janeiro \n\n");
     for(i = 0; i < TAMAGENDA; i++){
-        char aux[4] = "RJ";
+        char aux[4] = "rj";
+
+        mostrar = 0;
 
         if(stricmp(pessoa[i].endereco.estado, aux) == 0){
-            printf("\n\n\n Nome: %s", pessoa[i].nome);
+                if(mostrar == 0){
+                    printf("\n\n\n * Rio de Janeiro \n");
+            }
+            printf("\n Nome: %s", pessoa[i].nome);
             printf("\n Telefone: %s %s", pessoa[i].telefone.ddd , pessoa[i].telefone.numero);
             printf("\n E-mail: %s", pessoa[i].email);
+
+            mostrar = 1;
         }
     }
 
-    printf(" * Rio Grande do Norte \n\n");
     for(i = 0; i < TAMAGENDA; i++){
-        char aux[4] = "RN";
+        char aux[4] = "rn";
+
+        mostrar = 0;
 
         if(stricmp(pessoa[i].endereco.estado, aux) == 0){
-            printf("\n\n\n Nome: %s", pessoa[i].nome);
+                if(mostrar == 0){
+                    printf("\n\n\n * Rio Grande do Norte \n");
+            }
+            printf("\n Nome: %s", pessoa[i].nome);
             printf("\n Telefone: %s %s", pessoa[i].telefone.ddd , pessoa[i].telefone.numero);
             printf("\n E-mail: %s", pessoa[i].email);
+
+            mostrar = 1;
         }
     }
 
-    printf(" * Rio Grande do Sul \n\n");
     for(i = 0; i < TAMAGENDA; i++){
-        char aux[4] = "RS";
+        char aux[4] = "rs";
+
+        mostrar = 0;
 
         if(stricmp(pessoa[i].endereco.estado, aux) == 0){
-            printf("\n\n\n Nome: %s", pessoa[i].nome);
+                if(mostrar == 0){
+                    printf("\n\n\n * Rio Grande do Sul \n");
+            }
+            printf("\n Nome: %s", pessoa[i].nome);
             printf("\n Telefone: %s %s", pessoa[i].telefone.ddd , pessoa[i].telefone.numero);
             printf("\n E-mail: %s", pessoa[i].email);
+
+            mostrar = 1;
         }
     }
 
-    printf(" * Rondônia \n\n");
     for(i = 0; i < TAMAGENDA; i++){
-        char aux[4] = "RO";
+        char aux[4] = "ro";
+
+        mostrar = 0;
 
         if(stricmp(pessoa[i].endereco.estado, aux) == 0){
-            printf("\n\n\n Nome: %s", pessoa[i].nome);
+                if(mostrar == 0){
+                    printf("\n\n\n * Rondônia \n");
+            }
+            printf("\n Nome: %s", pessoa[i].nome);
             printf("\n Telefone: %s %s", pessoa[i].telefone.ddd , pessoa[i].telefone.numero);
             printf("\n E-mail: %s", pessoa[i].email);
+
+            mostrar = 1;
         }
     }
 
-    printf(" * Roraima \n\n");
     for(i = 0; i < TAMAGENDA; i++){
-        char aux[4] = "RR";
+        char aux[4] = "rr";
+
+        mostrar = 0;
 
         if(stricmp(pessoa[i].endereco.estado, aux) == 0){
-            printf("\n\n\n Nome: %s", pessoa[i].nome);
+                if(mostrar == 0){
+                    printf("\n\n\n * Roraima \n");
+            }
+            printf("\n Nome: %s", pessoa[i].nome);
             printf("\n Telefone: %s %s", pessoa[i].telefone.ddd , pessoa[i].telefone.numero);
             printf("\n E-mail: %s", pessoa[i].email);
+
+            mostrar = 1;
         }
     }
 
-    printf(" * Santa Catarina \n\n");
     for(i = 0; i < TAMAGENDA; i++){
-        char aux[4] = "SC";
+        char aux[4] = "sc";
+
+        mostrar = 0;
 
         if(stricmp(pessoa[i].endereco.estado, aux) == 0){
-            printf("\n\n\n Nome: %s", pessoa[i].nome);
+                if(mostrar == 0){
+                    printf("\n\n\n * Santa Catarina \n");
+            }
+            printf("\n Nome: %s", pessoa[i].nome);
             printf("\n Telefone: %s %s", pessoa[i].telefone.ddd , pessoa[i].telefone.numero);
             printf("\n E-mail: %s", pessoa[i].email);
+
+            mostrar = 1;
         }
     }
 
-    printf(" * São Paulo \n\n");
     for(i = 0; i < TAMAGENDA; i++){
-        char aux[4] = "SP";
+        char aux[4] = "sp";
+
+        mostrar = 0;
 
         if(stricmp(pessoa[i].endereco.estado, aux) == 0){
-            printf("\n\n\n Nome: %s", pessoa[i].nome);
+                if(mostrar == 0){
+                    printf("\n\n\n * São Paulo \n");
+            }
+            printf("\n Nome: %s", pessoa[i].nome);
             printf("\n Telefone: %s %s", pessoa[i].telefone.ddd , pessoa[i].telefone.numero);
             printf("\n E-mail: %s", pessoa[i].email);
+
+            mostrar = 1;
         }
     }
 
-    printf(" * Sergipe \n\n");
     for(i = 0; i < TAMAGENDA; i++){
-        char aux[4] = "SE";
+        char aux[4] = "se";
+
+        mostrar = 0;
 
         if(stricmp(pessoa[i].endereco.estado, aux) == 0){
-            printf("\n\n\n Nome: %s", pessoa[i].nome);
+                if(mostrar == 0){
+                    printf("\n\n * Sergipe \n");
+            }
+            printf("\n Nome: %s", pessoa[i].nome);
             printf("\n Telefone: %s %s", pessoa[i].telefone.ddd , pessoa[i].telefone.numero);
             printf("\n E-mail: %s", pessoa[i].email);
+
+            mostrar = 1;
         }
     }
 
-    printf(" * Tocantins \n\n");
     for(i = 0; i < TAMAGENDA; i++){
-        char aux[4] = "TO";
+        char aux[4] = "to";
+
+        mostrar = 0;
 
         if(stricmp(pessoa[i].endereco.estado, aux) == 0){
-            printf("\n\n\n Nome: %s", pessoa[i].nome);
+                if(mostrar == 0){
+                    printf("\n\n\n * Tocantins \n");
+            }
+            printf("\n Nome: %s", pessoa[i].nome);
             printf("\n Telefone: %s %s", pessoa[i].telefone.ddd , pessoa[i].telefone.numero);
             printf("\n E-mail: %s", pessoa[i].email);
+
+            mostrar = 1;
         }
     }
 
@@ -317,11 +492,12 @@ void ordemLocalidade(){
 
     do{
         scanf("%d", &op);
+        fflush (stdin);
 
         switch(op){
             case 1:
                 system("cls");
-                return main();
+                return menu();
                 valido = 1;
                 break;
 

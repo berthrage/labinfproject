@@ -17,6 +17,7 @@ void listarAgenda(){
 
     do{
         scanf("%d", &op);
+        fflush (stdin);
 
         switch(op){
             case 1:
