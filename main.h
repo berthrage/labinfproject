@@ -16,6 +16,7 @@ struct Endereco{
 struct Telefone{
 	char ddd[7];
 	char numero[13];
+	char numerocompleto[21];
 };
 
 struct DataNiver{
@@ -34,6 +35,6 @@ struct Pessoa{
 };
 
 struct Pessoa pessoa[100];
-
+int qtdCadastrados = 0;
 
 #endif //MAIN_H

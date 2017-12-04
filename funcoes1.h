@@ -1,35 +1,34 @@
 #include <stdio.h>
 #include <string.h>
 #include "main.h"
-#ifndef CADASTRARAGENDA_H
-#define CADASTRARAGENDA_H
+#ifndef FUNCOES1_H
+#define FUNCOES1_H
 
 
 void cadastrarAgenda(void){
 	int i = 0, 
-        iNull = -1, 
-        erroCadastrarAgenda, 
-        erroRepetirOperacao, 
-        erroDia, 
-        erroMes, 
-        erroAno, 
-        erroDdd, 
-        erroNumero, 
-        erroEmail,
-        erroCep, 
-        erroEstado,
-        contValidEmail,
-        contValidEmail2,
-        containAt,
-        posAt,
-        flagValidCep,
-        flagValidCep2,
-        flagValidEstado,
-        flagValidNum;
+	iNull = -1, 
+	erroCadastrarAgenda, 
+	erroRepetirOperacao, 
+	erroDia, 
+	erroMes, 
+	erroAno, 
+	erroDdd, 
+	erroNumero, 
+	erroEmail,
+	erroCep, 
+	erroEstado,
+	contValidEmail,
+	contValidEmail2,
+    containAt,
+	posAt,
+	flagValidCep,
+	flagValidCep2,
+	flagValidEstado;
 	
 	char repetirOperacao;
 	
-	// Estados Brasileiros para validação de Estado
+	// Estados Brasileiros para validação do Estado
 	char estadosBr [27][3];
     strcpy (estadosBr[0], "AC");
     strcpy (estadosBr[1], "AL");
@@ -72,13 +71,10 @@ void cadastrarAgenda(void){
         }
 
         if (iNull == -1){
-            printf ("ERRO: Agenda cheia.\n\n");
+            printf ("ERRO: Agenda cheia.\n");
             break;
         }
-        printf("*****************************************************************\n");
-        printf("*\t\t\t CADASTRAR AGENDA \t\t\t*\n");
-        printf("*\t\t\t\t\t\t\t\t*");
-        printf("\n*****************************************************************\n");
+        printf ("== CADASTRAR PESSOA ==\n\n");
         
         //DADOS BASICOS
         printf ("\n--Dados Básicos--\n");
@@ -87,7 +83,7 @@ void cadastrarAgenda(void){
         pessoa[iNull].nome[strlen (pessoa[iNull].nome) - 1] = '\0';
         fflush (stdin);
         
-        // Email, validaçao
+        // Validação e-mail
         do{ 
             erroEmail = 0;
             contValidEmail = 0;
@@ -122,36 +118,33 @@ void cadastrarAgenda(void){
                 
                 if (contValidEmail <= 2){
                     erroEmail = 1;
-                    printf ("INVÁLIDO: Email deve conter mais de 2 caracteres antes de '@'.\n\n");
-                    
+                    printf ("INVÁLIDO: Email deve conter mais de 2 caracteres antes de '@'.\n");
                 } else if (contValidEmail2 <= 2){
                     erroEmail = 1;
-                    printf ("INVÁLIDO: Email deve conter mais de 2 caracteres depois de '@'.\n\n");
+                    printf ("INVÁLIDO: Email deve conter mais de 2 caracteres depois de '@'.\n");
                 
-                } else if (!(pessoa[iNull].email[strlen (pessoa[iNull].email) - 1] == 'm' &&
-                    pessoa[iNull].email[strlen (pessoa[iNull].email) - 2] == 'o' && 
-                    pessoa[iNull].email[strlen (pessoa[iNull].email) - 3] == 'c' &&
-                    pessoa[iNull].email[strlen (pessoa[iNull].email) - 4] == '.')){
+                } else if (pessoa[iNull].email[strlen (pessoa[iNull].email) - 1] != 'm' &&
+                    pessoa[iNull].email[strlen (pessoa[iNull].email) - 2] != 'o' && 
+                    pessoa[iNull].email[strlen (pessoa[iNull].email) - 3] != 'c' &&
+                    pessoa[iNull].email[strlen (pessoa[iNull].email) - 4] != '.'){
                     
                     erroEmail = 1;
-                    printf ("INVÁLIDO: Email deve conter '.com' no final.\n\n");
+                    printf ("INVÁLIDO: Email deve conter '.com' no final.\n");
                 }                
             
             } else{
                 erroEmail = 1;
-                printf ("INVÁLIDO: Email deve conter '@'.\n\n");
+                printf ("INVÁLIDO: Email deve conter '@'.\n");
             }
 
         
         }while (erroEmail == 1);
         
-        
-        
         //ENDEREÇO
         printf ("\n--Endereço--\n");
         printf ("Rua: ");
         fgets (pessoa[iNull].endereco.rua, 152, stdin);
-        pessoa[iNull].endereco.rua[strlen (pessoa[iNull].endereco.rua) - 1] = '\0';
+        pessoa[iNull].nome[strlen (pessoa[iNull].endereco.estado) - 1] = '\0';
         fflush (stdin);
 
         printf ("Número: ");
@@ -168,7 +161,7 @@ void cadastrarAgenda(void){
         pessoa[iNull].endereco.bairro[strlen (pessoa[iNull].endereco.bairro) - 1] = '\0';
         fflush (stdin);
         
-        //CEP, validaçao
+        //Validação CEP
         do{
             erroCep = 0;
             flagValidCep = 0;
@@ -191,15 +184,12 @@ void cadastrarAgenda(void){
                 }
             }
             
-            if (pessoa[iNull].endereco.cep[5] != '-' || 
-                strlen(pessoa[iNull].endereco.cep) > 9 ||
-                strlen(pessoa[iNull].endereco.cep) < 9){
-                
+            if (pessoa[iNull].endereco.cep[5] != '-'){
                 erroCep = 1;
-                printf ("INVÁLIDO: CEP deve conter 5 dígitos numéricos + '-' + 3 dígitos numéricos.\n\n");
+                printf ("INVÁLIDO: CEP deve conter 5 dígitos numéricos + '-' + 3 dígitos numéricos.\n");
             } else if (flagValidCep == 1 || flagValidCep2 == 1){
                 erroCep = 1;
-                printf ("INVÁLIDO: CEP deve conter apenas dígitos numéricos.\n\n");
+                printf ("INVÁLIDO: CEP deve conter apenas dígitos numéricos.\n");
             }
             
         }while (erroCep == 1);
@@ -209,41 +199,38 @@ void cadastrarAgenda(void){
         pessoa[iNull].endereco.pais[strlen (pessoa[iNull].endereco.pais) - 1] = '\0';
         fflush (stdin);
         
-        //Estado, validaçao
-        do{
-            erroEstado = 0;
-            flagValidEstado = 0;
-            
-            printf ("Estado: ");
-            fgets (pessoa[iNull].endereco.estado, 5, stdin);
-            pessoa[iNull].endereco.estado[strlen (pessoa[iNull].endereco.estado) - 1] = '\0';
-            fflush (stdin);
-            
-            
-            for (i = 0; i < 27; i++){
-                if (strcmp(pessoa[iNull].endereco.estado, estadosBr[i]) == 0){
-                    flagValidEstado = 1;
-                }
-            }
-                
-            if (flagValidEstado != 1 || strlen (pessoa[iNull].endereco.estado) > 2){
-                erroEstado = 1;
-                printf ("INVÁLIDO: Estado informado não existe.\n\n");
-            } 
-            
-        } while (erroEstado == 1);        
-        
-        
         printf ("Cidade: ");
         fgets (pessoa[iNull].endereco.cidade, 52, stdin);
         pessoa[iNull].endereco.cidade[strlen (pessoa[iNull].endereco.cidade) - 1] = '\0';
         fflush (stdin);
 
+        do{
+            erroEstado = 0;
+            flagValidEstado = 0;
+            
+            printf ("Estado: ");
+            fgets (pessoa[iNull].endereco.estado, 4, stdin);
+            pessoa[iNull].endereco.estado[strlen (pessoa[iNull].endereco.estado) - 1] = '\0';
+            fflush (stdin);
+            
+            if (stricmp (pessoa[iNull].endereco.estado, "brasil") == 0){
+                for (i = 0; i < 27; i++){
+                    if (strcmp(pessoa[iNull].endereco.estado, estadosBr[i]) == 0){
+                        flagValidEstado = 1;
+                    }
+                }
+                
+                if (flagValidEstado != 1){
+                    erroEstado = 1;
+                    printf ("INVÁLIDO: Estado informado não existe.\n");
+                }
+            }
+        } while (erroEstado == 1);
+
 
         
         //TELEFONE
         printf ("\n--Telefone--\n");
-        //DDD, validacao
         do{
             erroDdd = 0;
             printf ("DDD (2 dígitos entre parênteses): ");
@@ -256,72 +243,65 @@ void cadastrarAgenda(void){
                 pessoa[iNull].telefone.ddd[2] >= 48 && pessoa[iNull].telefone.ddd[2] <= 57 && 
                 pessoa[iNull].telefone.ddd[3] == 41)){
                 
-                printf ("INVÁLIDO: Informar DDD apenas com 2 dígitos entre parênteses.\n\n");
+                printf ("INVÁLIDO: Informar DDD apenas com 2 dígitos entre parênteses.\n");
                 erroDdd = 1;
             
             } else if (strlen (pessoa[iNull].telefone.ddd) > 4){
-                printf ("INVÁLIDO: Informar DDD apenas com 2 dígitos entre parênteses (4 caracteres máx).\n\n");
+                printf ("INVÁLIDO: Informar DDD apenas com 2 dígitos entre parênteses (4 caracteres máx).\n");
                 erroDdd = 1;
             }
             
         } while (erroDdd == 1);
 
-        // Numero telefone, validacao
         do{
             erroNumero = 0;
-            flagValidNum = 0;
-            
-            printf ("Numero: ");
+            printf ("Numero (4 ou 5 digitos + '-' + 4 digitos): ");
             fgets (pessoa[iNull].telefone.numero, 13, stdin);
             pessoa[iNull].telefone.numero[strlen (pessoa[iNull].telefone.numero) - 1] = '\0';
             fflush (stdin);
             
             for (i = 0; i < 4; i++){
                 if (!(pessoa[iNull].telefone.numero[i] >= 48 && pessoa[iNull].telefone.numero[i] <= 57)){
-                    flagValidNum = 1;
+                    printf ("INVÁLIDO: Apenas caracteres numericos e '-'.\n");
+                    erroNumero = 1;
+                    break;
                 }
             }
             
-            if (strlen(pessoa[iNull].telefone.numero) == 9){ //Caso formato seja '9999-9999'
+            if (strlen(pessoa[iNull].telefone.numero) == 9  && erroNumero == 0){
                 if ((pessoa[iNull].telefone.numero[4] != 45)){
-                    flagValidNum = 1;
+                    printf ("INVÁLIDO: Apenas caracteres numericos e '-'.\n");
+                    erroNumero = 1;
                 } 
                 for (i = 5; i < 9; i++){
                     if (!(pessoa[iNull].telefone.numero[i] >= 48 && pessoa[iNull].telefone.numero[i] <= 57)){
-                        flagValidNum = 1;
+                        printf ("INVÁLIDO: Apenas caracteres numericos e '-'.\n");
+                        erroNumero = 1;
+                        break;
                     }
                 }
-            } else if (strlen(pessoa[iNull].telefone.numero) == 10){ //Caso formato seja '99999-9999'
+            } else if (strlen(pessoa[iNull].telefone.numero) == 10 && erroNumero == 0){
                 if ((pessoa[iNull].telefone.numero[5] != 45)){
-                    flagValidNum = 1;
+                    printf ("INVÁLIDO: Apenas caracteres numericos e '-'.\n");
+                    erroNumero = 1;
                 } 
                 for (i = 6; i < 10; i++){
                     if (!(pessoa[iNull].telefone.numero[i] >= 48 && pessoa[iNull].telefone.numero[i] <= 57)){
-                        flagValidNum = 1;
+                        printf ("INVÁLIDO: Apenas caracteres numericos e '-'.\n");
+                        erroNumero = 1;
+                        break;
                     }
                 }
-            }
-            
-            if (flagValidNum == 1){
-                printf ("INVÁLIDO: Apenas dígitos numéricos e '-' (4 ou 5 digitos + '-' + 4 digitos).\n\n");
-                erroNumero = 1;
-            
-            } else if (strlen(pessoa[iNull].telefone.numero) > 10 || strlen (pessoa[iNull].telefone.numero) < 9){
-                printf ("INVÁLIDO: Apenas dígitos numéricos e '-' (10 caracteres máx).\n\n");
+                
+            } else if (strlen(pessoa[iNull].telefone.numero) > 10 && erroNumero == 0){
+                printf ("INVÁLIDO: Apenas caracteres numericos e '-' (10 caracteres max).\n");
                 erroNumero = 1;
             }
             
         }while (erroNumero == 1);
-        
-        // Concatenar DDD e Numero para facilitar busca
-        strcpy (pessoa[iNull].telefone.numerocompleto, pessoa[iNull].telefone.ddd);
-        strcat (pessoa[iNull].telefone.numerocompleto, pessoa[iNull].telefone.numero);
-      
-        
-        
+
         //DATA DE ANIVERSARIO
         printf ("\n--Data de Aniversario--\n");
-        //Dia, validaçao
         do{
             erroDia = 0;
 
@@ -330,24 +310,24 @@ void cadastrarAgenda(void){
             fflush (stdin);
 
             if (!(pessoa[iNull].dataNiver.dia >= 1 && pessoa[iNull].dataNiver.dia <= 30)){
-                printf ("INVÁLIDO: Informar dia entre 1 e 30.\n\n");
+                printf ("INVÁLIDO: Informar dia entre 1 e 30.\n");
                 erroDia = 1;
             }
         }while (erroDia == 1);
 
-        //Mes, validaçao
+
         do{
             erroMes = 0;
             printf ("Mes: ");
             scanf ("%d", &pessoa[iNull].dataNiver.mes);
             fflush (stdin);
             if (!(pessoa[iNull].dataNiver.mes >= 1  && pessoa[iNull].dataNiver.mes <= 12)){
-                printf ("INVÁLIDO: Informar mes entre 1 e 12.\n\n");
+                printf ("INVÁLIDO: Informar mes entre 1 e 12.\n");
                 erroMes = 1;
             }
         }while (erroMes == 1);
 
-        //Ano, validaçao
+
         do{
             erroAno = 0;
             printf ("Ano: ");
@@ -355,12 +335,10 @@ void cadastrarAgenda(void){
             fflush (stdin);
 
             if (pessoa[iNull].dataNiver.ano < 1900){
-                printf ("INVÁLIDO: Informar ano a partir de 1900.\n\n");
+                printf ("INVÁLIDO: Informar ano a partir de 1900.\n");
                 erroAno = 1;
             }
         } while (erroAno == 1);
-        
-        
         
         //OBSERVACOES
         printf ("\nObservações (conter no máx. 300 caracteres): ");
@@ -368,9 +346,6 @@ void cadastrarAgenda(void){
         pessoa[iNull].obs[strlen (pessoa[iNull].obs) - 1] = '\0';
         fflush (stdin);
 
-        //Contagem de quantas pessoas cadastradas existem na agenda
-        qtdCadastrados++;
-        
         //REPETIR OPERACAO DE CADASTRO
         do{
             erroRepetirOperacao = 0;
@@ -380,11 +355,10 @@ void cadastrarAgenda(void){
 
             if (repetirOperacao == 's'){
                 erroCadastrarAgenda = 1;
-                printf ("\n\n");
             } else if (repetirOperacao == 'n'){
                 erroCadastrarAgenda = 0;
             } else{
-                printf ("ERRO: Informar 's' ou 'n'.\n\n");
+                printf ("ERRO: Informar 's' ou 'n'.\n");
                 erroRepetirOperacao = 1;
             }
         }while (erroRepetirOperacao == 1);
@@ -395,4 +369,4 @@ void cadastrarAgenda(void){
     return menu ();
 }
 
-#endif //CADASTRARAGENDA_H
+#endif //FUNCOES1_H

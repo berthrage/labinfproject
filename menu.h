@@ -34,7 +34,7 @@ void menu(){
 
             case 3:
                 system("cls");
-                //buscarAgenda();
+                buscarAgenda();
                 valido = 1;
                 break;
 
