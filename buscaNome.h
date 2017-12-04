@@ -3,7 +3,7 @@
 #define BUSCANOME_H
 #include "main.h"
 
-void buscaNome (void){
+void buscaNome(void){
     int i, 
         j, 
         op,
@@ -49,7 +49,7 @@ void buscaNome (void){
     
     
     // Separar primeiros nomes em vetor auxiliar para comparação
-    for (i = 0; i < qtdCadastrados; i++){
+    for (i = 0; i < TAMAGENDA; i++){
         comprPrimeiroNome = 0;
         possuiEspaco = 0;
         
@@ -75,7 +75,7 @@ void buscaNome (void){
     }
     
     // Realizar a busca (por comparação)
-    for (i = 0; i < qtdCadastrados; i++){
+    for (i = 0; i < TAMAGENDA; i++){
         if (stricmp (nomeBusca, auxPrimeiroNome[i]) == 0 && 
             strcmp (pessoa[i].telefone.numero, "NULL") != 0){
             

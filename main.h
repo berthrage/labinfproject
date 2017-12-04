@@ -37,4 +37,18 @@ struct Pessoa{
 struct Pessoa pessoa[100];
 int qtdCadastrados = 0;
 
+//Funções
+void cadastrarAgenda(void);
+void buscarAgenda(void);
+void buscaNome(void);
+void buscaMes(void);
+void buscaTelefone(void);
+void excluirAgenda(void);
+void listarAgenda(void);
+void ordemAlfabeticaT(void);
+void ordemAlfabetica(void);
+void ordemLocalidade(void);
+void sobre(void);
+
+
 #endif //MAIN_H

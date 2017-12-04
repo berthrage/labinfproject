@@ -1,7 +1,7 @@
 #ifndef BUSCARAGENDA_H
 #define BUSCARAGENDA_H
 
-void buscarAgenda(){
+void buscarAgenda(void){
     int op,
         valido;
 

@@ -13,11 +13,13 @@ void menu(){
     printf(" 1. Cadastrar \n\t");
     printf(" 2. Excluir \n\t");
     printf(" 3. Opções de busca \n\t");
-    printf(" 4. Opções de listagem \n");
+    printf(" 4. Opções de listagem \n\t");
+    printf(" 5. Sobre \n\t");
+    printf(" 6. Sair \n");
 
     do{
         scanf("%d", &op);
-        fflush (stdin);
+        fflush(stdin);
 
         switch(op){
             case 1:
@@ -28,7 +30,7 @@ void menu(){
 
             case 2:
                 system("cls");
-                //excluirContato();
+                excluirAgenda();
                 valido = 1;
                 break;
 
@@ -41,6 +43,17 @@ void menu(){
             case 4:
                 system("cls");
                 listarAgenda();
+                valido = 1;
+                break;
+            
+            case 5:
+                system("cls");
+                sobre();
+                valido = 1;
+                break;
+            
+            case 6:
+                exit(0);
                 valido = 1;
                 break;
 

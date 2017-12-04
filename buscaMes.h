@@ -3,7 +3,7 @@
 #define BUSCAMES_H
 #include "main.h"
 
-void buscaMes (void){
+void buscaMes(void){
     int i, 
         j, 
         op,
@@ -53,7 +53,7 @@ void buscaMes (void){
     printf ("---ANIVERSÁRIO EM %s---", mes[mesBusca - 1]);    
   
     // Realizar a busca (por comparação)
-    for (i = 0; i < qtdCadastrados; i++){
+    for (i = 0; i < TAMAGENDA; i++){
         if (mesBusca == pessoa[i].dataNiver.mes &&
             strcmp (pessoa[i].telefone.numero, "NULL") != 0){
                 

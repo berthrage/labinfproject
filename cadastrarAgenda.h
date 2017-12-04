@@ -25,7 +25,9 @@ void cadastrarAgenda(void){
         flagValidCep,
         flagValidCep2,
         flagValidEstado,
-        flagValidNum;
+        flagValidNum,
+        op,
+        valido;
 	
 	char repetirOperacao;
 	
@@ -371,23 +373,38 @@ void cadastrarAgenda(void){
         //Contagem de quantas pessoas cadastradas existem na agenda
         qtdCadastrados++;
         
-        //REPETIR OPERACAO DE CADASTRO
+        printf ("\n\n'%s' cadastrado(a) com sucesso.\n", pessoa[iNull].nome);
+        
+        // Repetir operação, voltar ao menu ou finalizar a execução
+        printf("\n\n 1. Realizar outro cadastro");
+        printf("\n 2. Voltar ao menu");
+        printf("\n 3. Sair \n");
         do{
-            erroRepetirOperacao = 0;
-            printf ("\n\nDeseja cadastrar outra pessoa na agenda? ('s' ou 'n'): ");
-            scanf ("%c", &repetirOperacao);
+            valido = 1;
+            scanf ("%d", &op);
             fflush (stdin);
 
-            if (repetirOperacao == 's'){
-                erroCadastrarAgenda = 1;
-                printf ("\n\n");
-            } else if (repetirOperacao == 'n'){
-                erroCadastrarAgenda = 0;
-            } else{
-                printf ("ERRO: Informar 's' ou 'n'.\n\n");
-                erroRepetirOperacao = 1;
+            switch(op){
+                case 1:
+                    system ("cls");
+                    erroCadastrarAgenda = 1;
+                    continue;
+                
+                case 2:
+                    system ("cls");
+                    return menu();
+                    break;
+                
+                case 3:
+                    exit (0);
+                    break;
+                
+                default:
+                    printf ("Operação Inválida! \n");
+            
             }
-        }while (erroRepetirOperacao == 1);
+            
+        }while (valido == 0);
 
     }while (erroCadastrarAgenda == 1);
     

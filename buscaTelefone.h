@@ -3,7 +3,7 @@
 #define BUSCATELEFONE_H
 #include "main.h"
 
-void buscaTelefone (void){
+void buscaTelefone(void){
     int i, 
         j, 
         op,
@@ -105,7 +105,7 @@ void buscaTelefone (void){
     
     
     // Realizar a busca (por comparação)
-    for (i = 0; i < qtdCadastrados; i++){
+    for (i = 0; i < TAMAGENDA; i++){
         if (strcmp(numerocompletoBusca, pessoa[i].telefone.numerocompleto) == 0){
             printf ("\n\n");
             printf("\n Nome: %s", pessoa[i].nome);

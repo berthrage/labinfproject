@@ -1,7 +1,7 @@
 #ifndef LISTARAGENDA_H_INCLUDED
 #define LISTARAGENDA_H_INCLUDED
 
-void listarAgenda(){
+void listarAgenda(void){
     int op,
         valido;
 
